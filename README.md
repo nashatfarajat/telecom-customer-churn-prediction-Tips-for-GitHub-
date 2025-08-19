@@ -10,9 +10,11 @@ The dataset is publicly available from the **CrowdAnalytix Community** churn pre
 - Checked for **missing values** and **duplicates** (none found).  
 - Outliers in numerical features were retained as they represent valid customer behavior.  
 - Numerical features were analyzed for **correlation** to reduce redundancy.  
-- Categorical features (`International plan`, `Voice mail plan`, `State`) were **encoded**, and the target variable `Churn` was converted to numeric.  
+- Categorical features (`International plan`, `Voice mail plan`) were **encoded**, and the target variable `Churn` was converted to numeric.  
 - Data was split into **training (80%)** and **testing (20%)** sets.  
-- **Standard scaling** was applied to numerical features.
+- **Target encoding** was applied to `State` after splitting to prevent data leakage.  
+- **Standard scaling** was applied to numerical features.  
+- **SMOTE oversampling** was applied on the training set to balance the classes and ensure the model learned patterns from both churners and non-churners.
 
 ## Feature Analysis
 - **Chi-square test** was performed for categorical features (e.g., `State`).  
@@ -25,10 +27,10 @@ Three models were trained and evaluated:
 2. **Decision Tree**  
 3. **XGBoost**  
 
-Model performance was assessed using the **confusion matrix**, **precision**, **recall**, **F1-score**, and **ROC-AUC**, considering the imbalanced nature of the dataset.
+Model performance was assessed using the **confusion matrix**, **precision**, **recall**, **F1-score**, and **ROC-AUC**.
 
 ## Key Findings
-- **XGBoost** achieved the highest performance with an accuracy of ~95.5% and ROC-AUC of 0.9146.  
+- **XGBoost** achieved the highest performance among the three models, with an accuracy of **93.40%** and ROC-AUC of **0.9109**.  
 - Most important features included customer service calls, total day charge, and service plan indicators.  
 
 ## Files in the Repository
