@@ -7,7 +7,7 @@ This project, completed as part of the **Estarta Internship**, focuses on predic
 The dataset is publicly available from the **CrowdAnalytix Community** churn prediction competition. It contains **3333 customer records** with 20 features, including usage patterns, service plans, and customer support interactions. The target variable is `Churn`.
 
 ## Data Quality and Preparation
-- Checked for **missing values** and **duplicates** (none found).  
+- Checked for **missing values** and **duplicates**.  
 - Outliers in numerical features were retained as they represent valid customer behavior.  
 - Numerical features were analyzed for **correlation** to reduce redundancy.  
 - Categorical features (`International plan`, `Voice mail plan`) were **encoded**, and the target variable `Churn` was converted to numeric.  
